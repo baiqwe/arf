@@ -103,23 +103,23 @@ export default function NamesPage() {
     <main className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
       <section className="mb-8">
         <Logo />
-        <div className="mt-4 flex items-center gap-4 flex-wrap">
-          <h1 className="text-3xl font-bold">Adopt Me Names Generator - Cute Pet Names</h1>
+        <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+          <h1 className="text-2xl sm:text-3xl font-bold leading-tight">Adopt Me Names Generator - Cute Pet Names</h1>
           <a
             href="/"
-            className="text-sm px-4 py-2 rounded-lg border border-zinc-200 hover:border-zinc-300 transition-all"
+            className="text-sm px-4 py-2.5 rounded-lg border border-zinc-200 hover:border-zinc-300 transition-all text-center sm:text-left flex-shrink-0"
           >
             🔤 Font Generator
           </a>
         </div>
-        <p className="mt-2 text-zinc-600">
+        <p className="mt-2 text-sm sm:text-base text-zinc-600">
           Generate cute and playful adopt me names and adopt me pet names with emojis. Get 5 unique name suggestions perfect for your Roblox Adopt Me pets and characters.
         </p>
         
         <div className="mt-6">
           <button
             onClick={generateNewNames}
-            className="rounded-lg bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-6 py-3 text-white font-semibold hover:opacity-90 transition-all shadow-md hover:shadow-lg"
+            className="rounded-lg bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-6 py-3.5 text-white font-semibold hover:opacity-90 transition-all shadow-md hover:shadow-lg min-h-[48px] touch-manipulation w-full sm:w-auto"
           >
             ✨ Generate Names
           </button>
@@ -159,7 +159,7 @@ export default function NamesPage() {
                           type="text"
                           value={editedNames[index] !== undefined ? editedNames[index] : name}
                           onChange={(e) => handleNameEdit(index, e.target.value)}
-                          className="w-full text-2xl font-bold text-zinc-800 border-2 border-pink-300 rounded-lg px-3 py-2 focus:outline-none focus:border-pink-500"
+                          className="w-full text-xl sm:text-2xl font-bold text-zinc-800 border-2 border-pink-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-pink-500"
                           placeholder="Enter your custom name"
                           autoFocus
                           maxLength={32}
@@ -180,13 +180,13 @@ export default function NamesPage() {
                         </div>
                       </div>
                     ) : (
-                      <div className="flex items-center gap-3 mb-3 flex-wrap">
-                        <span className="text-2xl font-bold text-zinc-800 break-words">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+                        <span className="text-xl sm:text-2xl font-bold text-zinc-800 break-words">
                           {styledName}
                         </span>
                         <button
                           onClick={() => setEditingIndex(index)}
-                          className="text-xs px-2 py-1 border border-zinc-300 rounded-md hover:bg-zinc-50 text-zinc-600"
+                          className="text-xs px-3 py-2 border border-zinc-300 rounded-md hover:bg-zinc-50 text-zinc-600 min-h-[36px] touch-manipulation self-start sm:self-auto"
                           title="Edit name"
                         >
                           ✏️ Edit
@@ -203,7 +203,7 @@ export default function NamesPage() {
                           <button
                             key={style.id}
                             onClick={() => toggleStyle(index, style.id)}
-                            className={`rounded-md px-3 py-1 text-xs transition-all ${
+                            className={`rounded-md px-2.5 sm:px-3 py-2 text-xs min-h-[36px] touch-manipulation transition-all ${
                               isActive
                                 ? "bg-black text-white"
                                 : "border border-zinc-200 hover:border-zinc-300"
@@ -211,14 +211,15 @@ export default function NamesPage() {
                             title={style.description}
                           >
                             <span className="mr-1">{style.icon}</span>
-                            {style.name}
+                            <span className="hidden sm:inline">{style.name}</span>
+                            <span className="sm:hidden">{style.name.split(' ')[0]}</span>
                           </button>
                         );
                       })}
                     </div>
 
                     {/* Style selector dropdown */}
-                    <details className="mb-3">
+                    <details className="mb-3" open={index === 0}>
                       <summary className="text-sm text-zinc-500 cursor-pointer hover:text-zinc-700">
                         More styles...
                       </summary>
@@ -229,7 +230,7 @@ export default function NamesPage() {
                             <button
                               key={style.id}
                               onClick={() => toggleStyle(index, style.id)}
-                              className={`rounded-md px-2 py-1 text-xs text-left transition-all ${
+                              className={`rounded-md px-2 py-2 text-xs text-left min-h-[36px] touch-manipulation transition-all ${
                                 isActive
                                   ? "bg-black text-white"
                                   : "border border-zinc-200 hover:border-zinc-300"
@@ -247,7 +248,7 @@ export default function NamesPage() {
                   {!isEditing && (
                     <button
                       onClick={() => onCopy(styledName)}
-                      className="rounded-md bg-black px-4 py-2 text-sm text-white hover:opacity-90 transition-all flex-shrink-0"
+                      className="rounded-md bg-black px-4 py-2.5 text-sm text-white hover:opacity-90 transition-all flex-shrink-0 min-h-[44px] touch-manipulation w-full sm:w-auto"
                     >
                       📋 Copy
                     </button>
@@ -269,21 +270,21 @@ export default function NamesPage() {
         </section>
       )}
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold">About Adopt Me Names Generator</h2>
-        <p className="mt-3 text-zinc-700">
+      <section className="mt-8 sm:mt-12">
+        <h2 className="text-xl sm:text-2xl font-semibold">About Adopt Me Names Generator</h2>
+        <p className="mt-2 sm:mt-3 text-sm sm:text-base text-zinc-700">
           Our adopt me names generator creates cute and playful names perfect for your Roblox Adopt Me pets and characters. 
           Each generated adopt me pet name combines adorable words with emojis and decorations to make your pet stand out. 
           You can apply different font styles to each name, making them even more unique and personalized.
         </p>
-        <h3 className="mt-6 text-xl font-semibold">How to use Adopt Me Names Generator</h3>
-        <p className="mt-2 text-zinc-700">
+        <h3 className="mt-4 sm:mt-6 text-lg sm:text-xl font-semibold">How to use Adopt Me Names Generator</h3>
+        <p className="mt-2 text-sm sm:text-base text-zinc-700">
           Simply click the "Generate Names" button to get 5 unique adopt me names. Each name comes with emojis and 
           can be styled using our font styles. Click on any style button to apply it to the name, then copy it 
           directly to use in Roblox Adopt Me. Perfect for pet names, player names, and more!
         </p>
-        <h3 className="mt-6 text-xl font-semibold">Tips for Adopt Me Names</h3>
-        <ul className="mt-2 list-disc pl-6 text-zinc-700 space-y-1">
+        <h3 className="mt-4 sm:mt-6 text-lg sm:text-xl font-semibold">Tips for Adopt Me Names</h3>
+        <ul className="mt-2 list-disc pl-5 sm:pl-6 text-sm sm:text-base text-zinc-700 space-y-1">
           <li>Keep names short - Roblox may filter long names</li>
           <li>Test names in-game before finalizing</li>
           <li>Combine emojis with cute words for best results</li>

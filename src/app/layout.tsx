@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   },
   description:
     "Free Adopt Me fonts generator for Roblox. Create stylish adopt me fonts like bubble fonts, bold, cute, small caps, and aesthetic fullwidth. Copy and paste adopt me fonts directly into Roblox Adopt Me names and chat.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   keywords: [
     "adopt me fonts",
     "adopt me font generator",
@@ -38,9 +44,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: [
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
   },

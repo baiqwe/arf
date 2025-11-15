@@ -1,14 +1,14 @@
 export default function Logo() {
   return (
-    <div className="flex items-center gap-3">
-      <div className="relative">
+    <div className="flex items-center gap-2 sm:gap-3">
+      <div className="relative flex-shrink-0">
         <svg
-          width="48"
-          height="48"
+          width="40"
+          height="40"
+          className="sm:w-12 sm:h-12 drop-shadow-sm"
           viewBox="0 0 64 64"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden
-          className="drop-shadow-sm"
         >
           {/* Cute cat face - solid color style */}
           {/* Head */}
@@ -38,11 +38,11 @@ export default function Logo() {
           <circle cx="48" cy="36" r="3" fill="#ffb3d6" opacity="0.6"/>
         </svg>
       </div>
-      <div className="flex flex-col">
-        <span className="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+      <div className="flex flex-col min-w-0">
+        <span className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent break-words">
           Adopt Me Fonts
         </span>
-        <span className="text-xs text-zinc-500 -mt-1">Free Roblox Font Generator</span>
+        <span className="text-[10px] sm:text-xs text-zinc-500 -mt-0.5 sm:-mt-1">Free Roblox Font Generator</span>
       </div>
     </div>
   );
