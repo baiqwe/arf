@@ -6,14 +6,16 @@ import Logo from "@/components/Logo";
 export default function Home() {
   const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const [text, setText] = useState(params.get("text") ?? "Adopt Me Fonts");
+  const [selected, setSelected] = useState<string>(params.get("style") ?? styles[0].id);
   const [toast, setToast] = useState<string>("");
 
   useEffect(() => {
     const next = new URLSearchParams(window.location.search);
     next.set("text", text);
+    next.set("style", selected);
     const url = `${window.location.pathname}?${next.toString()}`;
     window.history.replaceState(null, "", url);
-  }, [text]);
+  }, [text, selected]);
 
   const data = useMemo(() => styles.map((s) => ({ ...s, out: s.apply(text) })), [text]);
 
@@ -28,8 +30,12 @@ export default function Home() {
     }
   };
 
-  const featuredStyle = styles[0];
-  const featuredOutput = featuredStyle.apply(text);
+  const selectedStyle = styles.find((s) => s.id === selected) ?? styles[0];
+  const selectedOutput = selectedStyle.apply(text);
+
+  const handleSelect = (styleId: string) => {
+    setSelected(styleId);
+  };
 
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12">
@@ -63,19 +69,19 @@ export default function Home() {
         <div className="mt-6 rounded-xl border border-zinc-200 bg-white/95 backdrop-blur-sm p-4 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-center gap-2 font-medium text-sm sm:text-base">
-              <span aria-hidden>{featuredStyle.icon}</span>
-              <span className="break-words">{featuredStyle.name}</span>
+              <span aria-hidden>{selectedStyle.icon}</span>
+              <span className="break-words">{selectedStyle.name}</span>
             </div>
             <div className="flex gap-2">
               <button
-                onClick={() => onCopy(featuredOutput)}
-                className="rounded-md bg-black px-4 py-2.5 text-sm text-white hover:opacity-90 min-h-[44px] touch-manipulation"
+                onClick={() => onCopy(selectedOutput)}
+                className="rounded-md bg-black px-4 py-2.5 text-sm text-white transition-colors hover:bg-zinc-900 min-h-[44px] touch-manipulation"
               >
-                Copy Highlight
+                Copy Selected
               </button>
             </div>
           </div>
-          <div className="mt-3 break-words text-lg">{featuredOutput}</div>
+          <div className="mt-3 break-words text-lg">{selectedOutput}</div>
         </div>
         {!!toast && (
           <div role="status" aria-live="polite" className="fixed bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-black px-4 py-2 text-sm text-white shadow-sm z-50">
@@ -85,23 +91,45 @@ export default function Home() {
       </section>
 
       <section className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {data.map((s) => (
-          <div key={s.id} className="rounded-xl border border-zinc-200 hover:border-zinc-300 transition-all bg-white/95 backdrop-blur-sm p-4 shadow-sm">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
-              <div className="font-medium flex items-center gap-2 text-sm sm:text-base min-w-0">
-                <span aria-hidden className="flex-shrink-0">{s.icon}</span>
-                <span className="break-words">{s.name}</span>
+        {data.map((s) => {
+          const isSelected = selected === s.id;
+          return (
+            <div
+              key={s.id}
+              role="button"
+              tabIndex={0}
+              aria-pressed={isSelected}
+              onClick={() => handleSelect(s.id)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handleSelect(s.id);
+                }
+              }}
+              className={`rounded-xl border transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 ${isSelected ? "border-black shadow-md scale-[1.01]" : "border-zinc-200 hover:border-zinc-300"} bg-white/95 backdrop-blur-sm p-4 shadow-sm`}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
+                <div className="font-medium flex items-center gap-2 text-sm sm:text-base min-w-0">
+                  <span aria-hidden className="flex-shrink-0">{s.icon}</span>
+                  <span className="break-words">{s.name}</span>
+                </div>
+                <div className="flex gap-2 flex-shrink-0">
+                  <button
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      onCopy(s.out);
+                    }}
+                    className="rounded-md border border-zinc-200 px-3 py-2 text-xs sm:text-sm min-h-[36px] touch-manipulation transition-colors hover:bg-zinc-100"
+                  >
+                    Copy
+                  </button>
+                </div>
               </div>
-              <div className="flex gap-2 flex-shrink-0">
-                <button onClick={() => onCopy(s.out)} className="rounded-md border border-zinc-200 px-3 py-2 text-xs sm:text-sm min-h-[36px] touch-manipulation">
-                  Copy
-                </button>
-              </div>
+              <div className="mt-3 break-words text-base sm:text-lg">{s.out}</div>
+              <div className="mt-1 text-xs text-zinc-500 line-clamp-2">{s.description}</div>
             </div>
-            <div className="mt-3 break-words text-base sm:text-lg">{s.out}</div>
-            <div className="mt-1 text-xs text-zinc-500 line-clamp-2">{s.description}</div>
-          </div>
-        ))}
+          );
+        })}
       </section>
 
       <section className="mt-8 sm:mt-10">
@@ -124,14 +152,14 @@ export default function Home() {
             <h4 className="font-semibold text-base sm:text-lg mb-2">Step 1: Generate Your Font</h4>
             <p className="text-sm sm:text-base text-zinc-700">
               Type your desired text in the input field above. Choose from 50+ adopt me fonts styles like bubble, bold, cute, or aesthetic fullwidth. 
-              Click "Copy" to copy the styled text to your clipboard.
+              Click &quot;Copy&quot; to copy the styled text to your clipboard.
             </p>
           </div>
           
           <div className="bg-zinc-50 rounded-lg p-4 sm:p-5">
             <h4 className="font-semibold text-base sm:text-lg mb-2">Step 2: Change Your Player Name</h4>
             <p className="text-sm sm:text-base text-zinc-700">
-              Open Roblox and go to your profile settings. Click "Edit" next to your display name, paste the copied adopt me fonts, and save. 
+              Open Roblox and go to your profile settings. Click &quot;Edit&quot; next to your display name, paste the copied adopt me fonts, and save. 
               Your new styled name will appear in Adopt Me and other Roblox games.
             </p>
           </div>
@@ -220,7 +248,7 @@ export default function Home() {
               <h4 className="font-semibold">Star Decorations</h4>
             </div>
             <p className="text-sm text-zinc-700">
-              Star-decorated adopt me fonts are trendy for creating eye-catching names. Styles like "Star Brackets" and "Aesthetic Decor" 
+              Star-decorated adopt me fonts are trendy for creating eye-catching names. Styles like &quot;Star Brackets&quot; and &quot;Aesthetic Decor&quot; 
               add visual appeal while maintaining good Roblox compatibility.
             </p>
           </div>
@@ -265,7 +293,7 @@ export default function Home() {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-pink-500 mt-1">⚠</span>
-            <span>Some characters may be filtered by Roblox's moderation system</span>
+            <span>Some characters may be filtered by Roblox&rsquo;s moderation system</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-pink-500 mt-1">⚠</span>
@@ -278,7 +306,7 @@ export default function Home() {
           <div className="border-l-4 border-pink-300 pl-4">
             <h4 className="font-semibold text-base mb-1">Name appears as question marks (???)</h4>
             <p className="text-sm text-zinc-700">
-              This usually means the device doesn't support those Unicode characters. Try using more common styles like Bold or Bubble fonts.
+              This usually means the device doesn&rsquo;t support those Unicode characters. Try using more common styles like Bold or Bubble fonts.
             </p>
           </div>
           <div className="border-l-4 border-pink-300 pl-4">
@@ -290,7 +318,7 @@ export default function Home() {
           <div className="border-l-4 border-pink-300 pl-4">
             <h4 className="font-semibold text-base mb-1">Font looks different on mobile</h4>
             <p className="text-sm text-zinc-700">
-              Some devices render Unicode differently. Test your name on the device you'll primarily use. Bubble and Bold fonts have the best cross-device compatibility.
+              Some devices render Unicode differently. Test your name on the device you&rsquo;ll primarily use. Bubble and Bold fonts have the best cross-device compatibility.
             </p>
           </div>
         </div>

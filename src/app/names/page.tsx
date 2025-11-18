@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { generateNames } from "@/lib/nameGenerator";
 import styles from "@/lib/styles";
@@ -27,7 +28,7 @@ export default function NamesPage() {
     return editedNames[index] !== undefined ? editedNames[index] : names[index];
   };
 
-  const saveEdit = (index: number) => {
+  const saveEdit = () => {
     setEditingIndex(null);
     // Edited name is already saved in editedNames state
   };
@@ -105,12 +106,12 @@ export default function NamesPage() {
         <Logo />
         <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
           <h1 className="text-2xl sm:text-3xl font-bold leading-tight">Adopt Me Names Generator - Cute Pet Names</h1>
-          <a
+          <Link
             href="/"
             className="text-sm px-4 py-2.5 rounded-lg border border-zinc-200 hover:border-zinc-300 transition-all text-center sm:text-left flex-shrink-0"
           >
             🔤 Font Generator
-          </a>
+          </Link>
         </div>
         <p className="mt-2 text-sm sm:text-base text-zinc-600">
           Generate cute and playful adopt me names and adopt me pet names with emojis. Get 5 unique name suggestions perfect for your Roblox Adopt Me pets and characters.
@@ -143,7 +144,6 @@ export default function NamesPage() {
             const displayName = getDisplayName(index);
             const currentStyle = selectedStyles[index] || "normal";
             const styledName = getStyledName(index, displayName);
-            const currentStyleObj = styles.find((s) => s.id === currentStyle) || styles[0];
             const isEditing = editingIndex === index;
 
             return (
@@ -166,7 +166,7 @@ export default function NamesPage() {
                         />
                         <div className="flex gap-2 mt-2">
                           <button
-                            onClick={() => saveEdit(index)}
+                            onClick={saveEdit}
                             className="text-xs px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600"
                           >
                             ✓ Save
@@ -279,7 +279,7 @@ export default function NamesPage() {
         </p>
         <h3 className="mt-4 sm:mt-6 text-lg sm:text-xl font-semibold">How to use Adopt Me Names Generator</h3>
         <p className="mt-2 text-sm sm:text-base text-zinc-700">
-          Simply click the "Generate Names" button to get 5 unique adopt me names. Each name comes with emojis and 
+          Simply click the &quot;Generate Names&quot; button to get 5 unique adopt me names. Each name comes with emojis and 
           can be styled using our font styles. Click on any style button to apply it to the name, then copy it 
           directly to use in Roblox Adopt Me. Perfect for pet names, player names, and more!
         </p>

@@ -7,16 +7,6 @@ export type TextStyle = {
   icon?: string;
 };
 
-const mapRange = (input: string, src: string, dstStart: number): string => {
-  let out = "";
-  for (const ch of input) {
-    const i = src.indexOf(ch);
-    if (i >= 0) out += String.fromCodePoint(dstStart + i);
-    else out += ch;
-  }
-  return out;
-};
-
 const az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const azLower = az.toLowerCase();
 const digits = "0123456789";
