@@ -79,3 +79,4 @@ export function getSymbolsByCategory(category: string): Symbol[] {
   return symbols.filter((s) => s.category === category);
 }
 
+
