@@ -23,11 +23,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Adopt Me Fonts Generator - Free Roblox Adopt Me Fonts Tool",
+    default: "Adopt Me Fonts Generator | (c©py & pa$te) ✂️",
     template: "%s | Adopt Me Fonts",
   },
   description:
-    "Free Adopt Me fonts generator for Roblox. Create stylish adopt me fonts like bubble fonts, bold, cute, small caps, and aesthetic fullwidth. Copy and paste adopt me fonts directly into Roblox Adopt Me names and chat.",
+    "【 𝟙𝟘𝟘% 𝗙𝗿𝗲𝗲 】 Generate 𝒸𝑜𝑜𝓁, ⓑⓤⓑⓑⓛⓔ & 𝓪𝓮𝓼𝓽𝓱𝓮𝓽𝓲𝓬 text for Roblox! ➜ Click to Copy & Paste (No Install). ʕ•́ᴥ•̀ʔ",
   keywords: [
     "adopt me fonts",
     "adopt me font generator",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Adopt Me Fonts Generator - Free Roblox Adopt Me Fonts Tool",
+    title: "Adopt Me Fonts Generator | (c©py & pa$te) ✂️",
     description:
-      "Create and copy adopt me fonts for Roblox: bubble fonts, bold, cute, small caps, aesthetic fullwidth. Free adopt me fonts generator with 50+ styles.",
+      "【 𝟙𝟘𝟘% 𝗙𝗿𝗲𝗲 】 Generate 𝒸𝑜𝑜𝓁, ⓑⓤⓑⓑⓛⓔ & 𝓪𝓮𝓼𝓽𝓱𝓮𝓽𝓲𝓬 text for Roblox! ➜ Click to Copy & Paste (No Install). ʕ•́ᴥ•̀ʔ",
     url: "https://adoptmefont.com/",
     siteName: "Adopt Me Fonts",
     type: "website",
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adopt Me Fonts Generator - Free Roblox Fonts Tool",
-    description: "Generate and copy adopt me fonts for Roblox. Free adopt me fonts generator with bubble, bold, cute styles. 50+ font styles available.",
+    title: "Adopt Me Fonts Generator | (c©py & pa$te) ✂️",
+    description: "【 𝟙𝟘𝟘% 𝗙𝗿𝗲𝗲 】 Generate 𝒸𝑜𝑜𝓁, ⓑⓤⓑⓑⓛⓔ & 𝓪𝓮𝓼𝓽𝓱𝓮𝓽𝓲𝓬 text for Roblox! ➜ Click to Copy & Paste (No Install). ʕ•́ᴥ•̀ʔ",
     images: ["https://adoptmefont.com/og-image.svg"],
   },
   robots: {
