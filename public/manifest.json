@@ -1,0 +1,19 @@
+{
+  "name": "Adopt Me Fonts Generator",
+  "short_name": "Adopt Me Fonts",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ff7fbf",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
