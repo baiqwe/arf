@@ -140,7 +140,7 @@ export default function TermsOfService() {
             If you have any questions about these Terms of Service, please contact us:
           </p>
           <ul className="list-none text-sm sm:text-base text-zinc-700 space-y-2">
-            <li>Email: <a href="mailto:contact@adoptmefont.com" className="text-pink-600 underline">contact@adoptmefont.com</a></li>
+            <li>Email: <a href="mailto:developwebforadoptme@2925.com" className="text-pink-600 underline">developwebforadoptme@2925.com</a></li>
             <li>Website: <a href="/contact" className="text-pink-600 underline">Contact Us Page</a></li>
           </ul>
         </section>

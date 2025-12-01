@@ -47,10 +47,10 @@ export default function Contact() {
                   For general inquiries, support questions, or feedback:
                 </p>
                 <a 
-                  href="mailto:contact@adoptmefont.com" 
+                  href="mailto:developwebforadoptme@2925.com" 
                   className="text-pink-600 underline font-medium text-lg"
                 >
-                  contact@adoptmefont.com
+                  developwebforadoptme@2925.com
                 </a>
               </div>
             </div>
