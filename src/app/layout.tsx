@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -195,8 +196,15 @@ export default function RootLayout({
             gtag('config', 'G-2N6FHJDCPJ');
           `}
         </Script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2499950673294937"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

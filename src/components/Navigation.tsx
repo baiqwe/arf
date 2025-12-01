@@ -11,6 +11,18 @@ export default function Navigation() {
           </Link>
           <div className="flex items-center gap-2 sm:gap-4">
             <Link
+              href="/blog"
+              className="px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium text-zinc-700 hover:text-pink-600 hover:bg-pink-50 transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/about"
+              className="px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium text-zinc-700 hover:text-pink-600 hover:bg-pink-50 transition-colors"
+            >
+              About
+            </Link>
+            <Link
               href="/preppy-font-generator"
               className="px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium text-zinc-700 hover:text-pink-600 hover:bg-pink-50 transition-colors"
             >
@@ -21,12 +33,6 @@ export default function Navigation() {
               className="px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium text-zinc-700 hover:text-pink-600 hover:bg-pink-50 transition-colors"
             >
               🐾 Generate Names
-            </Link>
-            <Link
-              href="/tag-filter-checker"
-              className="px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium text-zinc-700 hover:text-pink-600 hover:bg-pink-50 transition-colors"
-            >
-              🔍 Filter Checker
             </Link>
           </div>
         </div>
