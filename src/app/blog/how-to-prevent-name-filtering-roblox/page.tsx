@@ -61,9 +61,7 @@ export default function PreventNameFiltering() {
         <Breadcrumbs items={breadcrumbs} />
         <article>
           <header className="mt-4">
-            <time dateTime="2024-01-10" className="text-sm text-zinc-500">
-              January 10, 2024
-            </time>
+            <time dateTime="2025-12-05T12:00:00.000Z">December 5, 2025</time>
             <h1 className="text-2xl sm:text-3xl font-bold mt-2">
               How to Prevent Your Name from Being Filtered in Roblox
             </h1>

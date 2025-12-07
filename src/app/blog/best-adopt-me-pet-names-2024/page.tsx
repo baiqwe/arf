@@ -65,12 +65,7 @@ export default function BestPetNames2024() {
         <Breadcrumbs items={breadcrumbs} />
         <article>
           <header className="mt-4">
-            <time
-              dateTime="2024-01-15"
-              className="text-sm text-zinc-500"
-            >
-              January 15, 2024
-            </time>
+            <time dateTime="2025-11-18T12:00:00.000Z">November 18, 2025</time>
             <h1 className="text-2xl sm:text-3xl font-bold mt-2">
               Best Adopt Me Pet Names for 2024: Creative Ideas for Your Pets
             </h1>
