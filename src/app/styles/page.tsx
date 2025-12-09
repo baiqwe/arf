@@ -15,18 +15,19 @@ const breadcrumbs = [
 ];
 
 export default function StylesPage() {
-    // 定义 ID 到 URL 的特定映射关系
-    // 如果 ID 在这里，就用映射的 URL；如果不在，默认跳到首页或通用处理
+    // 定义 ID 到 URL 的精确映射，防止 404
     const getStyleLink = (id: string) => {
         switch (id) {
+            // 只有这些 ID 对应了真实的物理文件夹
             case 'bubble': return '/styles/bubble-fonts';
             case 'bold': return '/styles/bold-fonts';
             case 'cute': return '/styles/cute-fonts';
             case 'small-caps': return '/styles/small-caps';
             case 'double-struck': return '/styles/double-struck';
             case 'star-brackets': return '/styles/star-brackets';
-            // 对于没有专门页面的样式，目前最好的做法是跳转到首页并带上参数，或者暂时不生成链接
-            // 这里我们让它跳转到首页并选中该样式，这对用户体验最好
+
+            // 其他所有样式（如 aesthetic-decor, heart-sparkle 等）
+            // 都没有独立页面，应该跳转到首页并自动选中该样式
             default: return `/?style=${id}`;
         }
     };
