@@ -1,4 +1,4 @@
-"use client";
+
 import Link from "next/link";
 import Script from "next/script";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
@@ -14,6 +14,17 @@ const breadcrumbs = [
 
 const petNames = getPetNames("shadow-dragon");
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Shadow Dragon Names for Adopt Me | Adopt Me Fonts",
+  description: "Best dark and mysterious names for Shadow Dragons in Adopt Me.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 export default function ShadowDragonNamesPage() {
   const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
 
@@ -26,7 +37,7 @@ export default function ShadowDragonNamesPage() {
       />
       <main className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
         <Breadcrumbs items={breadcrumbs} />
-        
+
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Shadow Dragon Names for Adopt Me</h1>
         <p className="text-lg text-zinc-700 mb-8">
           Find the perfect dark and mysterious name for your Shadow Dragon. These names work great in Roblox Adopt Me and come with font style suggestions to make them look even cooler.
@@ -39,7 +50,7 @@ export default function ShadowDragonNamesPage() {
               const recommendedStyles = petName.styles
                 .map((id) => styles.find((s) => s.id === id))
                 .filter(Boolean);
-              
+
               return (
                 <div key={index} className="border border-zinc-200 rounded-lg p-4 bg-white">
                   <h3 className="text-xl font-semibold mb-3">{petName.name}</h3>

@@ -103,9 +103,12 @@ export default function Footer() {
             <p className="text-sm text-zinc-600 text-center sm:text-left">
               © {currentYear} Adopt Me Fonts. All rights reserved.
             </p>
-            <p className="text-xs text-zinc-500 text-center sm:text-right">
-              Not affiliated with Roblox Corporation or Adopt Me.
-            </p>
+            <div className="text-xs text-zinc-500 text-center sm:text-right max-w-md">
+              <p>Not affiliated with Roblox Corporation or Adopt Me.</p>
+              <p className="mt-1">
+                Roblox and Adopt Me are trademarks of their respective owners. This is a fan-made website.
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-"use client";
+
 import Link from "next/link";
 import Script from "next/script";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
@@ -14,6 +14,17 @@ const breadcrumbs = [
 
 const petNames = getPetNames("frost-dragon");
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Frost Dragon Names for Adopt Me | Adopt Me Fonts",
+  description: "Best cool names for Frost Dragons in Adopt Me. Find the perfect name for your dream pet.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 export default function FrostDragonNamesPage() {
   const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
 
@@ -26,7 +37,7 @@ export default function FrostDragonNamesPage() {
       />
       <main className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
         <Breadcrumbs items={breadcrumbs} />
-        
+
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Frost Dragon Names for Adopt Me</h1>
         <p className="text-lg text-zinc-700 mb-8">
           Looking for the perfect name for your Frost Dragon? We&apos;ve collected the best frost dragon names that work great in Roblox Adopt Me. Each name comes with font style suggestions to make it look even better.
@@ -39,7 +50,7 @@ export default function FrostDragonNamesPage() {
               const recommendedStyles = petName.styles
                 .map((id) => styles.find((s) => s.id === id))
                 .filter(Boolean);
-              
+
               return (
                 <div key={index} className="border border-zinc-200 rounded-lg p-4 bg-white">
                   <h3 className="text-xl font-semibold mb-3">{petName.name}</h3>
