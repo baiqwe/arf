@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://adoptmefont.com"),
   alternates: { canonical: "https://adoptmefont.com/" },
+  other: {
+    "google-adsense-account": "ca-pub-2499950673294937",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
