@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import { useSearchParams, useRouter } from "next/navigation";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { petNameCategories, PetName } from "@/lib/petNames";
@@ -19,9 +20,32 @@ const petTypes = [
   { id: "cow", name: "Cow", icon: "🐄" },
 ];
 
-export default function PetNamesPage() {
-  const [selectedPet, setSelectedPet] = useState("all");
+function PetNamesContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const initialPet = searchParams.get("pet") || "all";
+  const [selectedPet, setSelectedPet] = useState(initialPet);
   const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
+  // Sync state with URL params on initial load
+  useEffect(() => {
+    const pet = searchParams.get("pet");
+    if (pet && petTypes.some(p => p.id === pet)) {
+      setSelectedPet(pet);
+    }
+  }, [searchParams]);
+
+  const handlePetChange = (petId: string) => {
+    setSelectedPet(petId);
+    const params = new URLSearchParams(searchParams.toString());
+    if (petId === "all") {
+      params.delete("pet");
+    } else {
+      params.set("pet", petId);
+    }
+    const query = params.toString() ? `?${params.toString()}` : "";
+    router.replace(`/pet-names${query}`, { scroll: false });
+  };
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -105,7 +129,7 @@ export default function PetNamesPage() {
             {petTypes.map((pet) => (
               <button
                 key={pet.id}
-                onClick={() => setSelectedPet(pet.id)}
+                onClick={() => handlePetChange(pet.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${selectedPet === pet.id
                   ? "bg-pink-600 text-white"
                   : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"
@@ -210,5 +234,13 @@ export default function PetNamesPage() {
         </section>
       </main>
     </>
+  );
+}
+
+export default function PetNamesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <PetNamesContent />
+    </Suspense>
   );
 }
