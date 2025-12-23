@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     "free adopt me fonts",
   ],
   metadataBase: new URL("https://adoptmefont.com"),
-  alternates: { canonical: "https://adoptmefont.com/" },
   other: {
     "google-adsense-account": "ca-pub-2499950673294937",
   },
