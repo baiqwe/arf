@@ -277,19 +277,7 @@ export default function HomeStaticContent() {
                 </div>
             </section>
 
-            <section className="mt-8 sm:mt-10">
-                <h2 className="text-xl font-semibold mb-4">What Players Are Saying</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-white p-4 rounded-lg border border-zinc-200">
-                        <p className="text-sm text-zinc-700 italic mb-2">&quot;Used the Bubble Font for my Mega Neon Frost - got 3 trade requests in 5 minutes! The name really makes pets stand out.&quot;</p>
-                        <p className="text-xs text-zinc-500">— Trading server player, Dec 2024</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-lg border border-zinc-200">
-                        <p className="text-sm text-zinc-700 italic mb-2">&quot;Finally found a font generator that actually works in Roblox. Other sites gave me boxes, but these fonts display perfectly on mobile.&quot;</p>
-                        <p className="text-xs text-zinc-500">— Mobile player, Community feedback</p>
-                    </div>
-                </div>
-            </section>
+
 
             <section className="mt-8 sm:mt-12 mb-8">
 
@@ -300,7 +288,7 @@ export default function HomeStaticContent() {
                         <p className="text-sm text-zinc-600 mb-3">Struggling to name your new legendary pet? Check out our curated lists for specific pets.</p>
                         <ul className="text-sm space-y-1">
                             <li><Link href="/pet-names" className="text-pink-600 hover:underline">🐾 Browse All Pet Names</Link></li>
-                            <li><Link href="/blog/best-adopt-me-pet-names-2024" className="text-pink-600 hover:underline">🏆 2024 Pet Name Trends</Link></li>
+                            <li><Link href="/blog/best-adopt-me-pet-names-2024" className="text-pink-600 hover:underline">🏆 2025 Pet Name Trends</Link></li>
                         </ul>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-zinc-200">

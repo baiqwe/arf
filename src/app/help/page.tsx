@@ -141,8 +141,8 @@ export default function Help() {
                     <ul className="list-none text-sm sm:text-base text-zinc-700 space-y-2">
                         <li>
                             <strong>Email:</strong>{" "}
-                            <a href="mailto:developwebforadoptme@2925.com" className="text-pink-600 underline">
-                                developwebforadoptme@2925.com
+                            <a href="mailto:support@adoptmefont.com" className="text-pink-600 underline">
+                                support@adoptmefont.com
                             </a>
                         </li>
                         <li>

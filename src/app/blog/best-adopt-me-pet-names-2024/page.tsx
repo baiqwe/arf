@@ -11,16 +11,16 @@ const breadcrumbs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Best Adopt Me Pet Names for 2024: Creative Ideas for Your Pets",
+  title: "Best Adopt Me Pet Names for 2025: Creative Ideas for Your Pets",
   description: "Discover the most creative and popular pet names for Roblox Adopt Me. From cute to cool, find the perfect name for your frost dragon, shadow dragon, or any pet.",
   alternates: {
     canonical: "https://adoptmefont.com/blog/best-adopt-me-pet-names-2024",
   },
   openGraph: {
-    title: "Best Adopt Me Pet Names for 2024: Creative Ideas for Your Pets",
+    title: "Best Adopt Me Pet Names for 2025: Creative Ideas for Your Pets",
     description: "Discover the most creative and popular pet names for Roblox Adopt Me.",
     type: "article",
-    publishedTime: "2024-01-15",
+    publishedTime: "2025-11-18",
     url: "https://adoptmefont.com/blog/best-adopt-me-pet-names-2024",
   },
   robots: {
@@ -35,14 +35,14 @@ export default function BestPetNames2024() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: "Best Adopt Me Pet Names for 2024: Creative Ideas for Your Pets",
+    headline: "Best Adopt Me Pet Names for 2025: Creative Ideas for Your Pets",
     description: "Discover the most creative and popular pet names for Roblox Adopt Me.",
     author: {
       "@type": "Organization",
       name: "Adopt Me Fonts",
     },
-    datePublished: "2024-01-15",
-    dateModified: "2024-01-15",
+    datePublished: "2025-11-18",
+    dateModified: "2025-11-18",
     publisher: {
       "@type": "Organization",
       name: "Adopt Me Fonts",
@@ -67,7 +67,7 @@ export default function BestPetNames2024() {
           <header className="mt-4">
             <time dateTime="2025-11-18T12:00:00.000Z">November 18, 2025</time>
             <h1 className="text-2xl sm:text-3xl font-bold mt-2">
-              Best Adopt Me Pet Names for 2024: Creative Ideas for Your Pets
+              Best Adopt Me Pet Names for 2025: Creative Ideas for Your Pets
             </h1>
             <p className="text-sm text-zinc-500 mt-2">8 min read</p>
           </header>

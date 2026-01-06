@@ -59,7 +59,7 @@ const blogPosts = [
   },
   {
     slug: "best-adopt-me-pet-names-2024",
-    title: "Best Adopt Me Pet Names for 2024: Creative Ideas for Your Pets",
+    title: "Best Adopt Me Pet Names for 2025: Creative Ideas for Your Pets",
     excerpt: "Discover the most creative and popular pet names for Roblox Adopt Me. From cute to cool, find the perfect name for your frost dragon, shadow dragon, or any pet.",
     date: "2025-11-18",
     readTime: "8 min read",

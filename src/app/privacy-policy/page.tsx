@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
           <p className="text-sm sm:text-base text-zinc-700 mb-4">
             Our font generator tool operates entirely in your browser. The text you type into our generator is processed locally on your device and is never transmitted to our servers. We do not collect, store, or have access to the text you generate.
           </p>
-          
+
           <h3 className="text-lg font-medium mb-2 mt-4">Automatically Collected Information</h3>
           <p className="text-sm sm:text-base text-zinc-700 mb-2">
             Like most websites, we automatically collect certain information when you visit our site:
@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
 
         <section className="mt-6">
           <h2 className="text-xl font-semibold mb-3">Third-Party Services</h2>
-          
+
           <h3 className="text-lg font-medium mb-2 mt-4">Google Analytics</h3>
           <p className="text-sm sm:text-base text-zinc-700 mb-4">
             We use Google Analytics to understand how visitors interact with our website. Google Analytics collects information such as how often users visit our site, what pages they visit, and what other sites they used prior to coming to our site. We use the information we get from Google Analytics to improve our site. Google Analytics collects only the IP address assigned to you on the date you visit our site, rather than your name or other identifying information. Google's ability to use and share information collected by Google Analytics about your visits to our site is restricted by the <a href="https://www.google.com/analytics/terms/" className="text-pink-600 underline" target="_blank" rel="noopener noreferrer">Google Analytics Terms of Service</a> and the <a href="https://policies.google.com/privacy" className="text-pink-600 underline" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" className="text-pink-600 underline" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.
@@ -154,7 +154,7 @@ export default function PrivacyPolicy() {
             If you have any questions about this Privacy Policy, please contact us:
           </p>
           <ul className="list-none text-sm sm:text-base text-zinc-700 space-y-2">
-            <li>Email: <a href="mailto:developwebforadoptme@2925.com" className="text-pink-600 underline">developwebforadoptme@2925.com</a></li>
+            <li>Email: <a href="mailto:support@adoptmefont.com" className="text-pink-600 underline">support@adoptmefont.com</a></li>
             <li>Website: <a href="/contact" className="text-pink-600 underline">Contact Us Page</a></li>
           </ul>
         </section>

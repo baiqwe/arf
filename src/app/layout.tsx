@@ -133,11 +133,7 @@ export default function RootLayout({
     },
     description: "Free online tool to generate adopt me fonts for Roblox Adopt Me. Create bubble fonts, bold, cute, small caps, and aesthetic fullwidth styles.",
     url: "https://adoptmefont.com/",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1000",
-    },
+
   };
 
   const howToSchema = {
@@ -203,7 +199,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2499950673294937"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
         <Navigation />
         {children}

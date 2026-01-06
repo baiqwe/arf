@@ -46,11 +46,11 @@ export default function Contact() {
                 <p className="text-sm sm:text-base text-zinc-700 mb-2">
                   For general inquiries, support questions, or feedback:
                 </p>
-                <a 
-                  href="mailto:developwebforadoptme@2925.com" 
+                <a
+                  href="mailto:support@adoptmefont.com"
                   className="text-pink-600 underline font-medium text-lg"
                 >
-                  developwebforadoptme@2925.com
+                  support@adoptmefont.com
                 </a>
               </div>
             </div>
