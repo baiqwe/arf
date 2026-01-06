@@ -7,6 +7,10 @@ export const metadata: Metadata = {
     title: "All Font Styles | Adopt Me Fonts",
     description: "Browse all 50+ aesthetic font styles for Roblox Adopt Me.",
     alternates: { canonical: "https://adoptmefont.com/styles" },
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 const breadcrumbs = [

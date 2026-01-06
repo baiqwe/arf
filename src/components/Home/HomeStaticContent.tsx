@@ -34,6 +34,53 @@ export default function HomeStaticContent() {
             </section>
 
             <section className="mt-8 sm:mt-10">
+                <h2 className="text-lg sm:text-xl font-semibold">Why Default Fonts get filtered in Roblox?</h2>
+                <div className="mt-4 space-y-4 text-zinc-700">
+                    <p>
+                        Roblox uses a sophisticated filter known as "Community Sift" to keep the platform safe. This system aggressively blocks numbers, personal info, and "inappropriate" phrases.
+                        However, it often false-flags innocent pet names like "Cookie" or "Princess" simply because they might be used in other contexts.
+                    </p>
+                    <p>
+                        <strong>The "Font" Solution:</strong> By using our font generator, you are technically using <em>Mathematical Alphanumeric Symbols</em> (like 𝙼𝚊𝚝𝚑).
+                        To the Roblox filter filter, <strong>"C"</strong> (Latin letter) and <strong>"𝙲"</strong> (Mathematical Monospace) are completely different characters.
+                        This often allows your text to "bypass" the strict word list while remaining readable to humans.
+                    </p>
+                    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                        <p className="text-sm">
+                            <strong>Note:</strong> While this helps with innocent names, never use fonts to bypass filters for bullying or inappropriate language. That will get your account banned.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="mt-8 sm:mt-10">
+                <h2 className="text-lg sm:text-xl font-semibold">3 Ways Fonts Increase Pet Trading Value</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                    <div className="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                        <div className="text-3xl mb-3">💎</div>
+                        <h3 className="font-bold text-lg mb-2">The "Pro" Signal</h3>
+                        <p className="text-sm text-zinc-600">
+                            A default font signals a "casual player." A styled font like <strong>𝐁𝐨𝐥𝐝</strong> signals a "trader" who knows market values. People offer fair trades to pros.
+                        </p>
+                    </div>
+                    <div className="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                        <div className="text-3xl mb-3">🥺</div>
+                        <h3 className="font-bold text-lg mb-2">Emotional Appeal</h3>
+                        <p className="text-sm text-zinc-600">
+                            Naming a pet "plz adopt" is spammy. Naming it "🥺𝓹𝓵𝔃 𝓪𝓭𝓸𝓹𝓽🥺" is cute. Cute pets get accepted for free more often.
+                        </p>
+                    </div>
+                    <div className="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                        <div className="text-3xl mb-3">📈</div>
+                        <h3 className="font-bold text-lg mb-2">Differentiation</h3>
+                        <p className="text-sm text-zinc-600">
+                            In a server with 10 Unicorns, the one named <strong>✨🦄Starfire🦄✨</strong> captures attention first. Attention leads to trade requests.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="mt-8 sm:mt-10">
                 <h2 className="text-lg sm:text-xl font-semibold mb-4">Frequently Asked Questions</h2>
                 <div className="space-y-4">
                     <div>
@@ -296,6 +343,40 @@ export default function HomeStaticContent() {
                         <p className="text-sm text-zinc-600 mb-3">Learn how to create names that won&apos;t get tagged by Roblox&apos;s filter system.</p>
                         <Link href="/blog/how-to-prevent-name-filtering-roblox" className="text-pink-600 hover:underline text-sm font-medium">Read our Anti-Filter Guide →</Link>
                     </div>
+                </div>
+            </section>
+            <section className="mt-12 pt-8 border-t border-zinc-200">
+                <h2 className="text-2xl font-bold mb-6">Latest from the Blog</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Link href="/blog/adopt-me-pet-naming-marketing" className="group block bg-white rounded-xl border border-zinc-200 overflow-hidden hover:shadow-md transition-shadow">
+                        <div className="p-6">
+                            <span className="text-xs font-semibold text-pink-600 uppercase tracking-wider">Strategy Guide</span>
+                            <h3 className="text-xl font-bold mt-2 mb-3 group-hover:text-pink-600 transition-colors">Adopt Me Pet Naming for Trading: Emotional Marketing Strategies</h3>
+                            <p className="text-zinc-600 text-sm line-clamp-3">
+                                You&apos;re not just trading a digital pet; you&apos;re trading a friend. Learn how to use "Name Value" to increase your trade offers by up to 25%.
+                            </p>
+                            <div className="mt-4 flex items-center text-sm text-zinc-500">
+                                <span>Read Article →</span>
+                            </div>
+                        </div>
+                    </Link>
+                    <Link href="/blog/how-to-prevent-name-filtering-roblox" className="group block bg-white rounded-xl border border-zinc-200 overflow-hidden hover:shadow-md transition-shadow">
+                        <div className="p-6">
+                            <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">Safety Guide</span>
+                            <h3 className="text-xl font-bold mt-2 mb-3 group-hover:text-blue-600 transition-colors">How to Prevent Name Filtering in Roblox 2025</h3>
+                            <p className="text-zinc-600 text-sm line-clamp-3">
+                                Why does "Cookie" turn into "######"? Understand the Roblox "Community Sift" filter and how to format your name to stay safe.
+                            </p>
+                            <div className="mt-4 flex items-center text-sm text-zinc-500">
+                                <span>Read Article →</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="mt-6 text-center">
+                    <Link href="/blog" className="inline-block px-6 py-3 bg-zinc-100 text-zinc-900 font-semibold rounded-lg hover:bg-zinc-200 transition-colors">
+                        View All Guides
+                    </Link>
                 </div>
             </section>
         </>

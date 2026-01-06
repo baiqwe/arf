@@ -70,7 +70,7 @@ export default function SymbolsPage() {
       />
       <main className="mx-auto max-w-5xl px-4 sm:px-6 py-8 sm:py-12">
         <Breadcrumbs items={breadcrumbs} />
-        
+
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Roblox Safe Symbols - Cute Symbols for Adopt Me</h1>
         <p className="text-lg text-zinc-700 mb-8">
           Find safe symbols that work in Roblox Adopt Me. All symbols are tested and labeled with their safety status. Click any symbol to copy it instantly.
@@ -81,16 +81,27 @@ export default function SymbolsPage() {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-lg border-2 transition-all ${
-                selectedCategory === category.id
-                  ? "border-pink-500 bg-pink-50"
-                  : "border-zinc-200 hover:border-zinc-300"
-              }`}
+              className={`px-4 py-2 rounded-lg border-2 transition-all ${selectedCategory === category.id
+                ? "border-pink-500 bg-pink-50"
+                : "border-zinc-200 hover:border-zinc-300"
+                }`}
             >
               <span className="mr-2">{category.icon}</span>
               {category.name}
             </button>
           ))}
+        </div>
+
+        {/* Expert Tip Section */}
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8 rounded-r-lg">
+          <h3 className="font-semibold mb-2">💡 Pro Tip: Making "Aesthetic" Bio Layouts</h3>
+          <p className="text-zinc-700 mb-2">
+            The most popular way to use symbols is for "dividers" in your profile.
+            Try this combination: <code className="bg-white px-2 py-1 rounded border border-blue-200">★·.·´¯`·.·★ YOUR NAME ★·.·´¯`·.·★</code>
+          </p>
+          <p className="text-sm text-zinc-500">
+            This specific pattern is usually safe because it uses standard separators. Avoid mixing too many "weird" alphabets in one line, as that triggers the spam filter.
+          </p>
         </div>
 
         {toast && (
@@ -104,11 +115,10 @@ export default function SymbolsPage() {
             <button
               key={symbol.char}
               onClick={() => onCopy(symbol)}
-              className={`p-4 rounded-lg border-2 transition-all hover:scale-110 ${
-                copiedSymbol === symbol.char
-                  ? "border-green-500 bg-green-50"
-                  : "border-zinc-200 hover:border-zinc-300"
-              }`}
+              className={`p-4 rounded-lg border-2 transition-all hover:scale-110 ${copiedSymbol === symbol.char
+                ? "border-green-500 bg-green-50"
+                : "border-zinc-200 hover:border-zinc-300"
+                }`}
               title={`${symbol.name} - ${getSafetyLabel(symbol.safety)}`}
             >
               <div className="text-3xl mb-2">{symbol.char}</div>
@@ -143,10 +153,10 @@ export default function SymbolsPage() {
             Roblox uses a tagging system that filters certain characters and words. The system is stricter in chat than in names, so some symbols that work for player names might get filtered in chat messages.
           </p>
           <p className="text-zinc-700 mb-4">
-            Our safety labels are based on community testing and feedback. We regularly update them as Roblox changes their filtering rules. If you find a symbol that&apos;s marked as safe but gets filtered, let us know and we&apos;ll update our database.
-          </p>
-          <p className="text-zinc-700">
-            <strong>Pro tip:</strong> When in doubt, stick with symbols marked as &quot;Safe.&quot; They&apos;re your best bet for reliable results.
+            If you are seeing hashtags (####) instead of your name, it means you&apos;ve triggered the safety filter.
+            <Link href="/blog/how-to-prevent-name-filtering-roblox" className="text-pink-600 font-semibold hover:underline ml-1">
+              Read our guide on How to Prevent Name Filtering in Roblox 2025
+            </Link> to learn the specific rules.
           </p>
         </section>
 
@@ -172,7 +182,7 @@ export default function SymbolsPage() {
             Need more help? Check out our <Link href="/how-to-use-adopt-me-fonts" className="text-pink-600 underline font-semibold">complete guide</Link> on using fonts and symbols in Roblox.
           </p>
         </section>
-      </main>
+      </main >
     </>
   );
 }
