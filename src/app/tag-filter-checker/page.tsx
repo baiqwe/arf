@@ -2,9 +2,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { checkTagFilter } from "@/lib/tagFilter";
+
+const AdBanner728x90 = dynamic(
+  () => import("@/components/ads/AdBanner728x90"),
+  { ssr: false }
+);
+const AdBanner300x250 = dynamic(
+  () => import("@/components/ads/AdBanner300x250"),
+  { ssr: false }
+);
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -58,7 +68,7 @@ export default function TagFilterCheckerPage() {
       />
       <main className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
         <Breadcrumbs items={breadcrumbs} />
-        
+
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Roblox Tag Filter Checker - Test Your Font Names</h1>
         <p className="text-lg text-zinc-700 mb-8">
           Test if your adopt me font name will work in Roblox before using it. Our checker analyzes your text and tells you if it&apos;s safe, might be filtered, or likely to get blocked.
@@ -180,6 +190,14 @@ export default function TagFilterCheckerPage() {
             Want to create safe preppy names? Try our <Link href="/preppy-font-generator" className="text-pink-600 underline font-semibold">Preppy Font Generator</Link> with tested templates.
           </p>
         </section>
+
+        {/* Ad slot at bottom */}
+        <div className="hidden md:block">
+          <AdBanner728x90 />
+        </div>
+        <div className="md:hidden">
+          <AdBanner300x250 />
+        </div>
       </main>
     </>
   );

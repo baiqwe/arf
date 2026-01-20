@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Script from "next/script";
+import ArticleAdSlot from "@/components/ads/ArticleAdSlot";
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -114,6 +115,9 @@ export default function PreventNameFiltering() {
               <li><strong>Personal information:</strong> Never include real names, addresses, or phone numbers</li>
               <li><strong>Excessive length:</strong> Very long names are more likely to be filtered</li>
             </ul>
+
+            {/* Ad slot in article */}
+            <ArticleAdSlot />
 
             <h2 className="text-xl font-semibold mt-8 mb-4">What to Do If Your Name Gets Filtered</h2>
             <p className="mb-4">

@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Script from "next/script";
 import Link from "next/link";
+import ArticleAdSlot from "@/components/ads/ArticleAdSlot";
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -112,6 +113,9 @@ export default function BlogPost() {
                 </tr>
               </tbody>
             </table>
+
+            {/* Ad slot in article */}
+            <ArticleAdSlot />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Advanced Font Generators</h2>
             <p className="text-zinc-700 mb-4">

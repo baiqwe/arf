@@ -2,11 +2,21 @@
 import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { useSearchParams, useRouter } from "next/navigation";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { petNameCategories, PetName } from "@/lib/petNames";
 import styles from "@/lib/styles";
+
+const AdNativeBanner = dynamic(
+  () => import("@/components/ads/AdNativeBanner"),
+  { ssr: false }
+);
+const AdBanner300x250 = dynamic(
+  () => import("@/components/ads/AdBanner300x250"),
+  { ssr: false }
+);
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -140,6 +150,9 @@ function PetNamesContent() {
           </div>
         </div>
 
+        {/* Ad slot after Editor's Pick */}
+        <AdNativeBanner />
+
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Filter by Pet Type</h2>
           <div className="flex flex-wrap gap-2">
@@ -214,6 +227,9 @@ function PetNamesContent() {
             Read our full case study on Name Value Marketing →
           </Link>
         </section>
+
+        {/* Ad slot after Trading Psychology section */}
+        <AdBanner300x250 />
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Naming Tips by Pet Type</h2>

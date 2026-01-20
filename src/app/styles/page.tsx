@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import styles from "@/lib/styles";
+import ToolPageAdSlot from "@/components/ads/ToolPageAdSlot";
 
 export const metadata: Metadata = {
     title: "All Font Styles | Adopt Me Fonts",
@@ -44,6 +45,9 @@ export default function StylesPage() {
                     </Link>
                 ))}
             </div>
+
+            {/* Ad slot at bottom */}
+            <ToolPageAdSlot />
         </main>
     );
 }

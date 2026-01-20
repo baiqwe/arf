@@ -1,8 +1,14 @@
 "use client";
 import Link from "next/link";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Breadcrumbs from "@/components/Breadcrumbs";
+
+const AdBanner300x250 = dynamic(
+  () => import("@/components/ads/AdBanner300x250"),
+  { ssr: false }
+);
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -128,6 +134,9 @@ export default function HowToPage() {
             If you need inspiration, try our <Link href="/adopt-me-names-generator" className="text-pink-600 underline font-semibold">name generator</Link>. It creates cute pet names with emojis that you can then style with fonts.
           </p>
         </section>
+
+        {/* Ad slot in middle of content */}
+        <AdBanner300x250 />
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Using Fonts in Chat</h2>

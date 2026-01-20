@@ -2,9 +2,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { preppyTemplates, applyPreppyTemplate, type PreppyTemplate } from "@/lib/preppyTemplates";
+
+const AdBanner728x90 = dynamic(
+  () => import("@/components/ads/AdBanner728x90"),
+  { ssr: false }
+);
+const AdBanner300x250 = dynamic(
+  () => import("@/components/ads/AdBanner300x250"),
+  { ssr: false }
+);
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -40,7 +50,7 @@ export default function PreppyFontGeneratorPage() {
       />
       <main className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
         <Breadcrumbs items={breadcrumbs} />
-        
+
         <h1 className="text-3xl sm:text-4xl font-bold mb-4">Preppy Adopt Me Fonts Generator - Aesthetic Names with Symbols</h1>
         <p className="text-lg text-zinc-700 mb-8">
           Create preppy adopt me fonts with cute symbols like ✨ 🎀 🐾. Perfect for aesthetic roblox names that stand out. Our preppy font generator combines stylish fonts with decorative symbols to create the perfect look.
@@ -56,17 +66,16 @@ export default function PreppyFontGeneratorPage() {
               placeholder="Type your text here"
               className="w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-black outline-none focus:border-pink-400"
             />
-            
+
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {preppyTemplates.map((template) => (
                 <button
                   key={template.id}
                   onClick={() => setSelectedTemplate(template)}
-                  className={`rounded-lg p-3 border-2 transition-all ${
-                    selectedTemplate.id === template.id
+                  className={`rounded-lg p-3 border-2 transition-all ${selectedTemplate.id === template.id
                       ? "border-pink-500 bg-pink-50"
                       : "border-zinc-200 hover:border-zinc-300"
-                  }`}
+                    }`}
                 >
                   <div className="text-2xl mb-1">{template.icon}</div>
                   <div className="text-sm font-medium">{template.name}</div>
@@ -143,6 +152,14 @@ export default function PreppyFontGeneratorPage() {
             Looking for name ideas? Browse our <Link href="/pet-names" className="text-pink-600 underline font-semibold">pet name bank</Link> for inspiration.
           </p>
         </section>
+
+        {/* Ad slot at bottom */}
+        <div className="hidden md:block">
+          <AdBanner728x90 />
+        </div>
+        <div className="md:hidden">
+          <AdBanner300x250 />
+        </div>
       </main>
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Script from "next/script";
+import ArticleAdSlot from "@/components/ads/ArticleAdSlot";
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -94,6 +95,9 @@ export default function BestPetNames2024() {
               <li><strong>Add personality:</strong> Use our <Link href="/adopt-me-names-generator" className="text-pink-600 underline">name generator</Link> to combine fonts with emojis for extra flair.</li>
               <li><strong>Test before finalizing:</strong> Use our <Link href="/tag-filter-checker" className="text-pink-600 underline">Tag Filter Checker</Link> to make sure your name will work in Roblox.</li>
             </ul>
+
+            {/* Ad slot in article */}
+            <ArticleAdSlot />
 
             <h2 className="text-xl font-semibold mt-8 mb-4">Popular Name Categories</h2>
 

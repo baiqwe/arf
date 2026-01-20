@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Script from "next/script";
 import Link from "next/link";
+import ArticleAdSlot from "@/components/ads/ArticleAdSlot";
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -87,6 +88,9 @@ export default function BlogPost() {
               <img src="/adopt-me-pet-inventory.webp" alt="Roblox Adopt Me pet inventory showing pets with styled font names" className="rounded-lg shadow-lg w-full" loading="lazy" />
               <p className="text-sm text-zinc-500 mt-2 text-center italic">Pet inventory with named pets ready for trading</p>
             </div>
+
+            {/* Ad slot in article */}
+            <ArticleAdSlot />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">3 Naming Archetypes That Sell</h2>
             <ul className="list-disc pl-6 space-y-3 text-zinc-700 mb-6">

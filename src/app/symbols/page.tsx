@@ -2,9 +2,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { symbols, symbolCategories, getSymbolsByCategory, type Symbol } from "@/lib/symbols";
+
+const AdNativeBanner = dynamic(
+  () => import("@/components/ads/AdNativeBanner"),
+  { ssr: false }
+);
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -128,6 +134,9 @@ export default function SymbolsPage() {
             </button>
           ))}
         </div>
+
+        {/* Ad slot after symbol grid */}
+        <AdNativeBanner />
 
         <section className="mb-8 bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-3">Understanding Safety Labels</h2>

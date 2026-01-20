@@ -3,6 +3,7 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumbs";
 import Script from "next/script";
+import BlogAdSlot from "@/components/ads/BlogAdSlot";
 
 const breadcrumbs = [
   { name: "Home", url: "https://adoptmefont.com/" },
@@ -101,7 +102,42 @@ export default function Blog() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {blogPosts.map((post) => (
+          {blogPosts.slice(0, 2).map((post) => (
+            <article
+              key={post.slug}
+              className="border border-zinc-200 rounded-lg p-6 hover:border-pink-300 transition-colors"
+            >
+              <Link href={`/blog/${post.slug}`}>
+                <time
+                  dateTime={post.date}
+                  className="text-xs text-zinc-500 block mb-2"
+                >
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+                <h2 className="text-xl font-semibold mb-2 hover:text-pink-600 transition-colors">
+                  {post.title}
+                </h2>
+                <p className="text-sm text-zinc-700 mb-4">{post.excerpt}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-zinc-500">{post.readTime}</span>
+                  <span className="text-sm text-pink-600 font-medium">
+                    Read more →
+                  </span>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        {/* Ad slot after first 2 posts */}
+        <BlogAdSlot />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {blogPosts.slice(2).map((post) => (
             <article
               key={post.slug}
               className="border border-zinc-200 rounded-lg p-6 hover:border-pink-300 transition-colors"
