@@ -9,7 +9,7 @@ const breadcrumbs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Wingdings Translator",
   description:
     "Contact Wingdings Translator for feedback, bug reports, or partnership questions about the site and its text tools.",
   alternates: {

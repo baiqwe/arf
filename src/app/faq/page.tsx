@@ -53,7 +53,7 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "FAQ | Wingdings Translator",
   description:
     "Detailed answers about Wingdings translation, Unicode behavior, preset differences, compatibility, and how to use related text tools.",
   alternates: {

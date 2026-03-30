@@ -9,7 +9,7 @@ const breadcrumbs = [
 ];
 
 export const metadata: Metadata = {
-  title: "404",
+  title: "404 | Wingdings Translator",
   description:
     "The page you requested could not be found. Try the main Wingdings translator or one of the related text tools.",
   robots: {

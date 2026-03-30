@@ -9,7 +9,7 @@ const breadcrumbs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | Wingdings Translator",
   description:
     "Read the privacy policy for Wingdings Translator, including cookies, analytics, and contact handling.",
   alternates: {

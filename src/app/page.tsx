@@ -5,9 +5,7 @@ import { siteUrl, toolConfigs } from "@/lib/textTools";
 const tool = toolConfigs.wingdings;
 
 export const metadata: Metadata = {
-  title: {
-    absolute: tool.metaTitle,
-  },
+  title: tool.metaTitle,
   description: tool.metaDescription,
   keywords: tool.keywords,
   alternates: {
